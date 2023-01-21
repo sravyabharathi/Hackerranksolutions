@@ -1,0 +1,17 @@
+
+    public static int countingValleys(int steps, String path) {
+    // Write your code here
+    int valley=0;
+    int seaLevel=0;  // take sealevel as 0 if it'smountasins then add 1 valley -1
+        for(int i=0;i<path.length();i++){
+            if(path.charAt(i) == 'D'){
+                seaLevel--;
+                if(seaLevel== -1){
+                    valley++;
+                }
+            }else{
+                seaLevel++;
+            }
+        }
+    return valley;
+    }
