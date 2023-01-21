@@ -1,0 +1,7 @@
+ public static long repeatedString(String s, long n) {
+    // Write your code here
+        long times = n/s.length(); //  10/3 - 3 words
+        long count = s.chars().filter(ch -> ch == 'a').count(); // no of a's in the three words -2
+        long mod = n%s.length(); // extra item at the end abaabaa - this last a
+        return times * count+s.substring(0, (int)mod).chars().filter(ch -> ch == 'a').count();
+    }
