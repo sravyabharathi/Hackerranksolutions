@@ -1,0 +1,16 @@
+public static int sockMerchant(int n, List<Integer> ar) {
+    // Write your code here
+        Set<Integer> list = new HashSet<Integer>(); //taking hashset to have unique sets - no duplicvates allowed
+        int[] t = ar.stream().mapToInt(i->i).toArray(); // used streams to convert from list integer to int array
+        int count =0; // result
+        for(int i=0;i<n;i++){
+            if(list.contains(t[i])){
+                count++;
+                list.remove(t[i]);
+            }else{
+                list.add(t[i]);
+            }
+        }
+        return count;
+        
+    }
